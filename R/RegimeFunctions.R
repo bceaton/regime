@@ -85,14 +85,13 @@ sim_pattern = function(Q, mu, S, D50, D84, D90, Uncert = 0.1,  Nmc = 100, Plot =
       
       print(summary(all_runs[all_runs$N == j,]))
       as.factor(all_runs$N)
-      
-      print(xyplot(d~W, data = all_runs, groups = N, 
-                   xlab = 'Total wetted width (m)',
-                   ylab = 'Mean hydraulic depth (m)',
-                   auto.key = list(space = "top", points = TRUE, columns = 5)
-                    )
-            )
     }
+    print(xyplot(d~W, data = all_runs, groups = N, 
+                 xlab = 'Total wetted width (m)',
+                 ylab = 'Mean hydraulic depth (m)',
+                 auto.key = list(space = "top", points = TRUE, columns = 5)
+    )
+    )
   }
   return(all_runs)
 }
